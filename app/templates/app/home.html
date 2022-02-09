@@ -5,7 +5,10 @@
 <div class="container">
     <div class="row">
         {% for shoe in shoes %}
-        <h2>{{ shoe.name }}</h2>        
+        <div>
+            <h2>{{ shoe.name }}</h2>
+            <small>{{ shoe.description }}</small> 
+        </div>       
         {% endfor %}
     </div>
 </div>

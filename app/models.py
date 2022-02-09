@@ -6,8 +6,10 @@ from django.db import models
 class Shoe(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
+    # price = models.IntegerField()
+    # gender = models.IntegerChoices()
     updated = models.DateTimeField(auto_now=True)
     date_posted = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.name 
