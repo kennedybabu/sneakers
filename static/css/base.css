@@ -1,3 +1,64 @@
-h2 {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+.primary-navigation[data-visible='true']{
+    transform: translateX(0%);
+
+}
+
+
+.primary-navigation li a {
+    margin-right: 1rem;
+}
+
+
+
+@media (max-width: 35em) {
+    .primary-navigation {
+        position: fixed;
+        inset: 0 30% 0 0;
+        background-color: rgb(240, 240, 240);
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding: min(20vh, 10rem) 2em;
+        transform: translateX(100%);
+    }
+
+
+    .mobile-nav-toggle {
+        width: 1rem;
+        aspect-ratio: 1;
+        position: absolute;
+        z-index: 9999;
+        top: 2rem;
+        left: 2rem;
+        border: 0;
+        background-repeat: no-repeat;
+        background-image: url(https://res.cloudinary.com/dblrvhi8r/image/upload/v1644421531/icon-close_n1rrku.svg);
+    }
 }
