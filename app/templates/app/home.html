@@ -2,6 +2,12 @@
 
 {% block content %} 
 
-<h3 class="text-center">home...ey</h3>
+<div class="container">
+    <div class="row">
+        {% for shoe in shoes %}
+        <h2>{{ shoe.name }}</h2>        
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
