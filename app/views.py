@@ -28,6 +28,7 @@ def registerUser(request):
     }
     return render(request, 'app/register.html', context)
 
+
 def loginUser(request):
     if request.method == 'POST':
         username = request.POST.get('username').lower()
@@ -52,12 +53,13 @@ def logoutUser(request):
     logout(request)
     return redirect('home')
 
+
 def landingpage(request):
     return render(request, 'app/landingpage.html')
 
+
 def home(request):
     shoes = Shoe.objects.all()
-
 
     context = {
         'shoes':shoes
