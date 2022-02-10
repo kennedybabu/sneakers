@@ -1,12 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+
+    --primary-color: hsl(26, 100%, 55%);
+    --pale-primary: hsl(25, 100%, 94%);
+
+
+    --dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
 }
 
 
 body {
     overflow-x: hidden;
+    padding: 0 5em;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 
@@ -14,6 +30,23 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+
+.nav-left {
+    display: flex;
+}
+
+
+.logo-div h3{
+    font-weight: 700;
+}
+
+
+.links {
+    display: flex;
+    align-items: center;
+    padding-left: 3em;
 }
 
 
@@ -25,19 +58,19 @@ nav {
 }
 
 
-.primary-navigation[data-visible='true']{
-    transform: translateX(0%);
-
-}
-
-
 .primary-navigation li a {
     margin-right: 1rem;
+    color: var(--black);
+}
+
+@media (min-width: 375px){
+    nav {
+        padding: 1em 0;
+    }
 }
 
 
-
-@media (max-width: 35em) {
+@media (max-width: 375px) {
     .primary-navigation {
         position: fixed;
         inset: 0 30% 0 0;
@@ -46,19 +79,51 @@ nav {
         align-items: start;
         justify-content: start;
         padding: min(20vh, 10rem) 2em;
-        transform: translateX(100%);
+        transform: translateX(-100%);
+        transition: transform 350ms ease-out;
     }
 
+
+    .primary-navigation[data-visible='true']{
+        transform: translateX(0%);
+    
+    }
 
     .mobile-nav-toggle {
         width: 1rem;
         aspect-ratio: 1;
         position: absolute;
         z-index: 9999;
-        top: 2rem;
+        top: 1.5rem;
         left: 2rem;
         border: 0;
+        background-color: transparent;
         background-repeat: no-repeat;
+        background-image: url(https://res.cloudinary.com/dblrvhi8r/image/upload/v1644421528/icon-menu_giuzko.svg);
+    }
+
+
+    .primary-navigation li a {
+        line-height: 2rem;
+    }
+
+
+    .mobile-nav-toggle[aria-expanded='true']{
         background-image: url(https://res.cloudinary.com/dblrvhi8r/image/upload/v1644421531/icon-close_n1rrku.svg);
     }
+
+
+    nav {
+        height: 66px;
+    }
+}
+
+
+
+.landing {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
