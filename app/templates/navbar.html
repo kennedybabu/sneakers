@@ -1,4 +1,4 @@
-
+{% load static %}
 <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">menu</span></button>
 
 <nav>
@@ -18,7 +18,17 @@
     </div>
 
     <div>
-        hello
+        <div>
+            <img src="{% static 'icons/icon-cart.svg' %}" alt="cart-icon">
+        </div>
+        <div>
+            {% if request.user.is_authenticated %} 
+                <a href="{% url 'logout' %}">hello, {{ request.user }} || logout</a>
+            {% else %}  
+                <a href="{% url 'login' %}">login</a>
+            {% endif %}
+
+        </div>
     </div>
    
 </nav>
