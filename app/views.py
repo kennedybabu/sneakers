@@ -1,6 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Shoe
-from django.contrib.auth.models import User
+from .models import Shoe,User
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login, logout
