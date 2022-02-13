@@ -48,6 +48,13 @@ nav {
 }
 
 
+
+.nav-login img {
+    width: 2rem;
+    aspect-ratio: 1;
+}
+
+
 .logo-div h3{
     font-weight: 700;
 }

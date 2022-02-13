@@ -57,13 +57,18 @@ def landingpage(request):
     return render(request, 'app/landingpage.html')
 
 
-def home(request):
-    Products = Product.objects.all()
+def home(request,category_slug=None):
+    category = None
+    products = Product.objects.all()
     categories = Category.objects.all()
+
+    if category_slug:
+        category = get_object_or_404(Category,slug=category_slug)
+        products = products.filter(category=category)
 
 
     context = {
-        'products':Products,
+        'products':products,
         'categories':categories,
     }
     return render(request, 'app/home.html', context )

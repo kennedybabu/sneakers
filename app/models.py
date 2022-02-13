@@ -1,5 +1,5 @@
-from pyexpat import model
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 
 
@@ -29,6 +29,9 @@ class Category(models.Model):
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
+    def get_absolute_url(self):
+        return reverse('home', args=[self.slug])
+
     def __str__(self):
         return self.name
 
@@ -45,6 +48,9 @@ class Product(models.Model):
     class Meta:
         ordering = ('name',)
         index_together = ( ('id', 'slug'),)
+
+    def get_absolute_url(self):
+        return reverse('product_detail', args=[self.id, self.slug])
 
     def __str__(self):
         return self.name 
