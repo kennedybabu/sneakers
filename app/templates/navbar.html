@@ -4,7 +4,7 @@
 <nav>
     <div class="nav-left">
         <div class="logo-div">
-            <h3>sneakers</h3>
+            <a href="{% url 'home' %}"><h3>sneakers</h3></a>
         </div>
 
         <div class="links">
@@ -34,7 +34,18 @@
                         </button>
                         </div>
                         <div class="modal-body">
-                        ...
+                          <div class="cart">
+                            {% with total_items=cart|length %} 
+                                {% if total_items > 0 %} 
+                                    Your cart: 
+                                        <a href="{% url 'cart:cart_detail' %}">
+                                            {{ total_items }} item{{total_items|pluralize }}, ksh{{ cart.get_total_price }}
+                                        </a>
+                                {% else %}
+                                    Your cart is empty
+                                {% endif %}                                             
+                            {% endwith %}
+                          </div>
                         </div>
                         <div class="modal-footer">
                         ...                        
@@ -51,7 +62,6 @@
                 <a href="{% url 'logout' %}">hello, {{ request.user }} || logout</a>
             {% else %}  
                 <a href="{% url 'login' %}">login</a>
-
             {% endif %}
 
         </div>
