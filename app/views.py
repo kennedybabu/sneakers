@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Shoe,User
+from .models import Product,User
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login, logout
@@ -58,9 +58,9 @@ def landingpage(request):
 
 
 def home(request):
-    shoes = Shoe.objects.all()
+    Products = Product.objects.all()
 
     context = {
-        'shoes':shoes
+        'Products':Products
     }
     return render(request, 'app/home.html', context )

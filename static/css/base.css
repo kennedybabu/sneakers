@@ -38,6 +38,16 @@ nav {
 }
 
 
+.nav-icon-tray {
+    display: flex;
+}
+
+
+.nav-login {
+    margin-left: .5em;
+}
+
+
 .logo-div h3{
     font-weight: 700;
 }
