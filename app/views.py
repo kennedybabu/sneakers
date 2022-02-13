@@ -3,6 +3,8 @@ from .models import Product,User, Category
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login, logout
+from cart.forms import CartAddProductForm
+
 # Create your views here.
 
 
@@ -75,9 +77,11 @@ def home(request,category_slug=None):
 
 
 def product_detail(request,id, slug):
-    product = get_object_or_404(Product, id = id, slug=slug)
+    product = get_object_or_404(Product, id=id, slug=slug)
+    cart_product_form = CartAddProductForm()
 
     context = {
-       'product':product 
+       'product':product,
+       'cart_product_form':cart_product_form 
     }
     return render(request, 'app/product_detail.html', context)
