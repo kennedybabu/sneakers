@@ -1,5 +1,5 @@
-from django.shortcuts import redirect, render
-from .models import Product,User
+from django.shortcuts import get_object_or_404, redirect, render
+from .models import Product,User, Category
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login, logout
@@ -57,10 +57,26 @@ def landingpage(request):
     return render(request, 'app/landingpage.html')
 
 
-def home(request):
+def home(request, category_slug=None):
     Products = Product.objects.all()
+    categories = Category.objects.all()
+
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        products = Products.filter(category=category)
 
     context = {
-        'Products':Products
+        'products':products,
+        'categories':categories,
+        'category': category
     }
     return render(request, 'app/home.html', context )
+
+
+def product_detail(request,id, slug):
+    product = get_object_or_404(Product, id = id, slug=slug)
+
+    context = {
+       'product':product 
+    }
+    return render(request, 'app/product_detail.html', context)
