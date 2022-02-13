@@ -4,14 +4,28 @@
 
 <div class="container home">
     <div class="row">
-        {% for shoe in shoes %}
         <div>
-            home
-            <h2>{{ shoe.name }}</h2>
-            <small>{{ shoe.description }}</small> 
-            <small>{{ shoe.gender }}</small>
-        </div>       
-        {% endfor %}
+            <h3>categories</h3>
+            <ul>
+                <li {% if not category %} class="selected" {% endif %}>
+                    <a href="{% url 'home' %}">all</a>
+                </li>
+                {% for c in categories %}  
+                    <li {% if category.slug == c.slug %} class="selected" {% endif %}>
+                        <a href="">{{ c.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            {% for product in products %} 
+                <div class="item">
+                    <a href="{% url 'product_detail' product.id  product.slug %}"><p>{{ product.name }}</p></a>
+                    <p>price: {{ product.price }}</p>
+                </div>           
+            
+            {% endfor %}
+        </div>
     </div>
 </div>
 
