@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login, logout
 from cart.forms import CartAddProductForm
+from .forms import UserForm
 
 # Create your views here.
 
@@ -79,10 +80,27 @@ def home(request,category_slug=None):
 
 def userProfile(request, id):
     user = User.objects.get(id=id)
+    
     context = {
         'user':user
     }
     return render(request, 'app/profile.html', context)
+
+
+def updateUser(request):
+    user = request.user
+    form = UserForm(instance=user)
+
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('user-profile', id= user.id)
+
+    context = {
+        'form':form
+    }
+    return render(request, 'app/update-user.html', context)
 
 def product_detail(request,id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)
