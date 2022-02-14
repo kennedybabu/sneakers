@@ -144,3 +144,13 @@ nav {
     align-items: center;
     flex-direction: column;
 }
+
+
+.item {
+    border: 1px solid grey;
+}
+
+
+.item:not(first_child) {
+    margin-top: 1em;
+}

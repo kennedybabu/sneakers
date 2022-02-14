@@ -76,6 +76,14 @@ def home(request,category_slug=None):
     return render(request, 'app/home.html', context )
 
 
+
+def userProfile(request, id):
+    user = User.objects.get(id=id)
+    context = {
+        'user':user
+    }
+    return render(request, 'app/profile.html', context)
+
 def product_detail(request,id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)
     cart_product_form = CartAddProductForm()
