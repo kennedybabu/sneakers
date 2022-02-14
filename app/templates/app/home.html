@@ -17,7 +17,7 @@
                 {% endfor %}
             </ul>
         </div>
-        <div>
+        <div class="tray">
             {% for product in products %} 
                 <div class="item">
                     <a href="{% url 'product_detail' product.id  product.slug %}"><p>{{ product.name }}</p></a>

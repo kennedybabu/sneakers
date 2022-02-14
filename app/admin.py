@@ -11,9 +11,14 @@ class CatgeoryAdmin(admin.ModelAdmin):
     prepoulated_fields ={'slug': ('name',)}
 
 
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug', 'price', 'created', 'updated']
     list_editable = ['price']
     prepopulated_field = {'slug': ('name',)}
+
+    class Meta:
+        model = Product
+
 

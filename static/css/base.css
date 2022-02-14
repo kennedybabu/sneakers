@@ -48,10 +48,14 @@ nav {
 }
 
 
-
 .nav-login img {
     width: 2rem;
     aspect-ratio: 1;
+}
+
+
+.modal-title {
+    align-self: center;
 }
 
 
@@ -148,9 +152,28 @@ nav {
 
 .item {
     border: 1px solid grey;
+    width: 300px;
 }
 
 
 .item:not(first_child) {
     margin-top: 1em;
+}
+
+
+.tray {
+    padding-left: 1.5rem;
+    display: flex;
+}
+
+
+.image img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 1em;
+}
+
+body > div:nth-child(6) > img {
+    width: 100px;
+    height: 150px;
 }

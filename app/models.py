@@ -1,3 +1,5 @@
+from distutils.command.upload import upload
+from email.policy import default
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
@@ -42,6 +44,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     updated = models.DateTimeField(auto_now=True)
+    image = models.ImageField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, db_index=True)
 
@@ -54,3 +57,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name 
+
+
+# class ProductImage(models.Model):
+#     product = models.ForeignKey(Product,default=None, on_delete=models.CASCADE)
+#     images = models.FileField(upload_to='images/', null=True,blank=True)
+
+#     def __str__(self):
+#         return self.product.name

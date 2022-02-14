@@ -28,7 +28,7 @@
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title text-center" id="exampleModalLabel">cart</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">cart</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -61,8 +61,8 @@
                                     {% endwith %}
                                 {% endfor %}
                             {% else %} 
+                                <h3>your cart is empty</h3>
                             
-                            your cart is empty
                             {% endif %}
                         {% endwith %}
                           </div>
@@ -79,7 +79,6 @@
                 <div>
                     <a href="{% url 'user-profile' user.id %}"><img src="{{ request.user.avatar.url }}" alt="profil pic"></a>
                 </div>
-                <a href="{% url 'logout' %}">hello, {{ request.user }} || logout</a>
             {% else %}  
                 <a href="{% url 'login' %}">login</a>
             {% endif %}

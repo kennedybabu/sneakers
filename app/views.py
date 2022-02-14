@@ -108,6 +108,7 @@ def product_detail(request,id, slug):
 
     context = {
        'product':product,
-       'cart_product_form':cart_product_form 
+       'cart_product_form':cart_product_form,
     }
+
     return render(request, 'app/product_detail.html', context)
