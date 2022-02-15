@@ -168,12 +168,57 @@ nav {
 
 
 .image img {
-    max-width: 100px;
-    max-height: 100px;
+    width: 80%;
+    height: auto;
     margin-top: 1em;
+    border-radius: 12px;
 }
 
-body > div:nth-child(6) > img {
-    width: 100px;
-    height: 150px;
+
+.right {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.right small {
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.product-name {
+    font-weight: bolder;
+}
+
+
+.product-price {
+    font-weight: bold;
+}
+
+
+.product-desc {
+    color: var(--dark-grayish-blue);
+
+}
+
+
+.cart-tray  button{
+    border: none;
+    padding: .5em 1.6em;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+    font-size: .8em;
+}
+
+
+.cart-tray img {
+    width: 1em;
+    aspect-ratio: 1;
+    margin-right: .4em;
+    filter: invert(1);
 }
