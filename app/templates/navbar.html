@@ -4,7 +4,7 @@
 <nav>
     <div class="nav-left">
         <div class="logo-div">
-            <a href="{% url 'home' %}"><h3>sneakers</h3></a>
+            <a class='title' href="{% url 'home' %}"><h3>sneakers</h3></a>
         </div>
 
         <div class="links">
@@ -48,23 +48,23 @@
                                     Your cart is empty
                                 {% endif %}                                             
                             {% endwith %} -->
-                        {% with total_items=cart|length %}
-                            {% if total_items > 0 %}
-                                {% for item in cart %} 
-                                    {% with product=item.product %}
-                                        <div>
-                                            <p>{{ product.name }}</p>
-                                            <small>{{ item.quantity }}</small>  
-                                            <a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'icons/icon-delete.svg' %}" alt="trash icon"></a>                           
-                                        </div>
+                            {% with total_items=cart|length %}
+                                {% if total_items > 0 %}
+                                    {% for item in cart %} 
+                                        {% with product=item.product %}
+                                            <div>
+                                                <p>{{ product.name }}</p>
+                                                <small>{{ item.quantity }}</small>  
+                                                <a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'icons/icon-delete.svg' %}" alt="trash icon"></a>                           
+                                            </div>
+                                    
+                                        {% endwith %}
+                                    {% endfor %}
+                                {% else %} 
+                                    <h3>your cart is empty</h3>
                                 
-                                    {% endwith %}
-                                {% endfor %}
-                            {% else %} 
-                                <h3>your cart is empty</h3>
-                            
-                            {% endif %}
-                        {% endwith %}
+                                {% endif %}
+                            {% endwith %}
                           </div>
                         </div>
                         <div class="modal-footer">                                                                 
@@ -77,7 +77,7 @@
         <div class="nav-login">
             {% if request.user.is_authenticated %} 
                 <div>
-                    <a href="{% url 'user-profile' user.id %}"><img src="{{ request.user.avatar.url }}" alt="profil pic"></a>
+                    <a href="{% url 'user-profile' user.id %}"><img src="{{ user.avatar.url }}" alt="profile pic"></a>
                 </div>
             {% else %}  
                 <a href="{% url 'login' %}">login</a>

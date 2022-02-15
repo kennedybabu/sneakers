@@ -1,20 +1,19 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Product,User, Category
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login, logout
 from cart.forms import CartAddProductForm
-from .forms import UserForm
+from .forms import UserForm, MyUserCreationForm
 
 # Create your views here.
 
 
 
 def registerUser(request):
-    form = UserCreationForm()
+    form = MyUserCreationForm()
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = MyUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
@@ -92,7 +91,7 @@ def updateUser(request):
     form = UserForm(instance=user)
 
     if request.method == 'POST':
-        form = UserForm(request.POST, instance=user)
+        form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return redirect('user-profile', id= user.id)

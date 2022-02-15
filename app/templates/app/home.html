@@ -20,11 +20,15 @@
         <div class="tray">
             {% for product in products %} 
                 <div class="item">
-                    <a href="{% url 'product_detail' product.id  product.slug %}"><p>{{ product.name }}</p></a>
-                    <p>price: {{ product.price }}</p>
-                    <small>{{ product.description }}</small>
-                </div>           
-            
+                    <div class="item-image">
+                        <img src="{{ product.image.url }}" alt="">
+                    </div>
+                    <div class="item-body">
+                        <a href="{% url 'product_detail' product.id  product.slug %}"><p>{{ product.name }}</p></a>
+                        <p>price: {{ product.price }}</p>
+                        <small>{{ product.description }}</small>
+                    </div>                    
+                </div>          
             {% endfor %}
         </div>
     </div>

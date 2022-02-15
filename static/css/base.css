@@ -38,6 +38,18 @@ nav {
 }
 
 
+.title {
+    color: var(--black);
+    text-decoration: none;
+}
+
+
+.title:hover {
+    text-decoration: none;
+    color: var(--black);
+}
+
+
 .nav-icon-tray {
     display: flex;
 }
@@ -68,6 +80,11 @@ nav {
     display: flex;
     align-items: center;
     padding-left: 3em;
+}
+
+
+.links a {
+    text-decoration: none;
 }
 
 
@@ -102,6 +119,7 @@ nav {
         padding: min(20vh, 10rem) 2em;
         transform: translateX(-100%);
         transition: transform 350ms ease-out;
+        z-index: 5000;
     }
 
 
@@ -152,7 +170,15 @@ nav {
 
 .item {
     border: 1px solid grey;
-    width: 300px;
+    max-width: 300px;
+    height: 450px;
+}
+
+
+
+.item-image img {
+    width: 100%;
+    height: 60%;
 }
 
 
@@ -202,6 +228,7 @@ nav {
 
 .product-desc {
     color: var(--dark-grayish-blue);
+    width: 70%;
 
 }
 
