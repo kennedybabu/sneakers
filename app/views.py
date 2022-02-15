@@ -7,8 +7,6 @@ from .forms import UserForm, MyUserCreationForm
 
 # Create your views here.
 
-
-
 def registerUser(request):
     form = MyUserCreationForm()
 
@@ -68,13 +66,11 @@ def home(request,category_slug=None):
         category = get_object_or_404(Category,slug=category_slug)
         products = products.filter(category=category)
 
-
     context = {
         'products':products,
         'categories':categories,
     }
     return render(request, 'app/home.html', context )
-
 
 
 def userProfile(request, id):
@@ -100,6 +96,7 @@ def updateUser(request):
         'form':form
     }
     return render(request, 'app/update-user.html', context)
+
 
 def product_detail(request,id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)

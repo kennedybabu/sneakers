@@ -7,5 +7,6 @@
 <h1>{{ user.username }}</h1>
 <a href="{% url 'update-user' %}">update profile</a>
 <a href="{% url 'logout' %}">hello, {{ request.user }} || logout</a>
+<img src="{{ request.user.avatar.url }}" alt="">
 
 {% endblock %}

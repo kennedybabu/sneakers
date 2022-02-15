@@ -16,7 +16,6 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
 
-
 class Category(models.Model):
     choices = (
     ('M', 'male'),
