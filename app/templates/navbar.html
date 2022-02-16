@@ -35,19 +35,7 @@
                         </div>
                         <div class="modal-body">
                           <div class="cart">
-                            <!-- {% with total_items=cart|length %} 
-                                {% if total_items > 0 %} 
-                                    {% for item in cart %} 
-                                        <small>{{ product.name }}</small>
-                                    {% endfor %}
-                                    Your cart: 
-                                        <a href="{% url 'cart:cart_detail' %}">
-                                            {{ total_items }} item{{total_items|pluralize }}, ksh{{ cart.get_total_price }}
-                                        </a>
-                                {% else %}
-                                    Your cart is empty
-                                {% endif %}                                             
-                            {% endwith %} -->
+                         
                             {% with total_items=cart|length %}
                                 {% if total_items > 0 %}
                                     {% for item in cart %} 
@@ -58,7 +46,7 @@
                                                         <img src="{{ product.image.url }}" alt="item-image">
                                                     </div>
                                                     <div class="cart-item-info">
-                                                       {{ product.name }} ksh {{ product.price }}x {{ item.quantity }}
+                                                       {{ product.name }} ksh {{ product.price }}x{{ item.quantity }} 
                                                     </div>
                                                     <div class="cart-item-icon-tray">
                                                         <a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'icons/icon-delete.svg' %}" alt="trash icon"></a>                           
@@ -73,6 +61,9 @@
                                 
                                 {% endif %}
                             {% endwith %}
+
+                            <button class="checkout">checkout</button>
+
                           </div>
                         </div>
                         <div class="modal-footer">                                                                 
