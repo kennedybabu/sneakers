@@ -57,10 +57,3 @@ class Product(models.Model):
     def __str__(self):
         return self.name 
 
-
-# class ProductImage(models.Model):
-#     product = models.ForeignKey(Product,default=None, on_delete=models.CASCADE)
-#     images = models.FileField(upload_to='images/', null=True,blank=True)
-
-#     def __str__(self):
-#         return self.product.name

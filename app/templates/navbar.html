@@ -53,9 +53,17 @@
                                     {% for item in cart %} 
                                         {% with product=item.product %}
                                             <div>
-                                                <p>{{ product.name }}</p>
-                                                <small>{{ item.quantity }}</small>  
-                                                <a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'icons/icon-delete.svg' %}" alt="trash icon"></a>                           
+                                                <div class="cart-item">
+                                                    <div class="cart-item-pic">
+                                                        <img src="{{ product.image.url }}" alt="item-image">
+                                                    </div>
+                                                    <div class="cart-item-info">
+                                                       {{ product.name }} ksh {{ product.price }}x {{ item.quantity }}
+                                                    </div>
+                                                    <div class="cart-item-icon-tray">
+                                                        <a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'icons/icon-delete.svg' %}" alt="trash icon"></a>                           
+                                                    </div>
+                                                </div>
                                             </div>
                                     
                                         {% endwith %}

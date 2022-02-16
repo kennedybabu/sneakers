@@ -63,6 +63,8 @@ nav {
 .nav-login img {
     width: 2rem;
     aspect-ratio: 1;
+    border-radius: 50px;
+    margin-left: 1em;
 }
 
 
@@ -248,4 +250,20 @@ nav {
     aspect-ratio: 1;
     margin-right: .4em;
     filter: invert(1);
+}
+
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .4em;
+}
+
+
+
+
+.cart-item-pic img {
+    width: 2em;
+    height: 2em;
+    border-radius: 2px;
 }
