@@ -46,7 +46,8 @@
                                                         <img src="{{ product.image.url }}" alt="item-image">
                                                     </div>
                                                     <div class="cart-item-info">
-                                                       {{ product.name }} ksh {{ product.price }}x{{ item.quantity }} 
+                                                       {{ product.name }} <br>
+                                                       <small>ksh {{ product.price }}x{{ item.quantity }}</small>
                                                     </div>
                                                     <div class="cart-item-icon-tray">
                                                         <a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'icons/icon-delete.svg' %}" alt="trash icon"></a>                           

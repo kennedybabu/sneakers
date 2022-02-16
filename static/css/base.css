@@ -292,16 +292,33 @@ nav {
 .cart-item-pic img {
     width: 3em;
     height: 3em;
-    border-radius: 2px;
+    border-radius: 5px;
+}
+
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: -7em;
+    flex-direction: column;
+}
+
+
+.cart-item-icon-tray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .checkout {
     width: 90%;
-    height: 8opx;
-    padding: 1.3em auto;
+    height: 50px;
     background-color: var(--primary-color);
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
     margin: 0 auto;
+    margin-top: .7em;
+    color: var(--white);
 }
