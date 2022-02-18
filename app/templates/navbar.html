@@ -9,10 +9,10 @@
 
         <div class="links">
             <ul data-visible='false' id="primary-navigation" class="primary-navigation">
-                <li><a href="">Collections</a></li>
-                <li><a href="">Men</a></li>
-                <li><a href="">Women</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="{% url 'home' %}">Collections</a></li>
+                <li><a href="{% url 'home' %}?category=M">Men</a></li>
+                <li><a href="{% url 'home' %}?category=F">Women</a></li>
+                <li><a href="{% url 'home' %}?category=Uni">Unisex</a></li>
             </ul>
         </div>    
     </div>
