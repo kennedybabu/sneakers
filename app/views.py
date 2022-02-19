@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login, logout
 from cart.forms import CartAddProductForm
 from .forms import UserForm, MyUserCreationForm
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -73,7 +75,7 @@ def home(request,category_slug=None):
     }
     return render(request, 'app/home.html', context )
 
-
+@login_required(login_url='login')
 def userProfile(request, id):
     user = User.objects.get(id=id)
     
@@ -83,6 +85,7 @@ def userProfile(request, id):
     return render(request, 'app/profile.html', context)
 
 
+@login_required(login_url='login')
 def updateUser(request):
     user = request.user
     form = UserForm(instance=user)
