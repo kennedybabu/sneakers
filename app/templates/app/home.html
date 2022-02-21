@@ -4,16 +4,16 @@
 
 <div class="container home">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-1">
 
         </div>
        
-        <div class="tray col-md-9 container">
+        <div class="tray col-md-11">
             <div class="row">
                 {% if products %}    
                     
                     {% for product in products %} 
-                        <div class="item col-md-3">
+                        <div class="item">
                             <div class="item-image">
                                 <img src="{{ product.image.url }}" alt="product image">
                                 <div class="item-body">
