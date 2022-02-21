@@ -206,25 +206,36 @@ nav {
 
 
 .item {
-    border: 1px solid grey;
-    width: 300px;
-    height: 350px;
+    width: 250px;
+    height: 300px;
     border-radius: 5px;
     margin-right: 1em;
     position: relative;
+    transform: scale(.988);
+    transition: transform ease-in 250ms;
+}
+
+
+.item:hover {
+    transform: scale(1);
+
+    box-shadow: -7px 8px 11px -6px rgba(0,0,0,0.75);
+-webkit-box-shadow: -7px 8px 11px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: -7px 8px 11px -6px rgba(0,0,0,0.75);
 }
 
 
 .item-image {
     height: 100%;
     max-width: 100%;
+    border-radius: 5px;
 }
-
 
 
 .item-image img {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 }
 
 
@@ -302,6 +313,11 @@ nav {
 }
 
 
+.cart {
+    padding: 0 .5em;
+}
+
+
 .cart-tray  button{
     border: none;
     padding: .5em 1.6em;
@@ -351,7 +367,7 @@ nav {
 
 
 .checkout {
-    width: 90%;
+    width: 100%;
     height: 50px;
     background-color: var(--primary-color);
     border-radius: 8px;
