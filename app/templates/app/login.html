@@ -2,21 +2,34 @@
 
 
 {% block content %} 
-<div>
-    <form action="" method="POST">
-        {% csrf_token %}  
-        <label for="">username</label>
-        <input type="text" name="username" placeholder="enter username">
+<div class="container">
+   <div class="row">
+       <div class="case">
+           <div class="top">
 
-        <label>password:</label>
-        <input type="password" name="password" value="password" placeholder="enter password">
+           </div>
+           <div class="middle">
+                <form action="" method="POST">
+                    {% csrf_token %}  
+                    <label for="">username</label><br>
+                    <input type="text" name="username" placeholder="enter username"><br>
+            
+                    <label>password:</label><br>
+                    <input type="password" name="password" value="password" placeholder="enter password"><br>
+            
+                    <input type="submit" value="login">
+                    
+                </form>
+                
+                <p>haven't signed up yet?</p>
+                <a href="{% url 'register' %}">sign up</a>
+           </div>
+           <div class="bottom">
 
-        <input type="submit" value="login">
-        
-    </form>
-    
-    <p>haven't signed up yet?</p>
-    <a href="{% url 'register' %}">sign up</a>
+           </div>
+   
+       </div>
+   </div>
 
 </div>
 

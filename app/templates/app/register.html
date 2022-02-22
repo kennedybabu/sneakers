@@ -4,17 +4,32 @@
 
 
 {% block content %} 
+<div class="container">
+  <div class="row">
+    <div class="case">
+      <div class="top">
+
+      </div>
+      <div class="middle">
+          <form action="" method="POST">
+            {% csrf_token %}
+    
+            {% bootstrap_form form %}
+            <!-- {{ form.as_p }} -->
+              <input type="submit" value="register" />
+          </form>
+  
+          <p>already signed up...</p>
+          <a href="{% url 'login' %}">login</a>
+      </div>
+      <div class="bottom">
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    <form action="" method="POST">
-        {% csrf_token %}
-
-        {% bootstrap_form form %}
-        <!-- {{ form.as_p }} -->
-        <input type="submit" value="register" />
-    </form>
-
-  <p>already signed up...</p>
-  <a href="{% url 'login' %}">login</a>
+   
 
 {% endblock %}
