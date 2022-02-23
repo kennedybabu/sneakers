@@ -17,6 +17,9 @@
             <p class="product-desc">{{ product.description }}</p>
             <p class="product-price">Ksh {{ product.price }}</p>
 
+
+
+            {% if request.user.is_authenticated %} 
             <div class="cart-tray">
                 <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                     {{ cart_product_form }}
@@ -25,6 +28,7 @@
                     <button type="submit" value="add to cart"><img src="{% static 'icons/icon-cart.svg' %}" alt="">add to cart</button>
                 </form>
             </div>
+            {% endif %}
         </div>
 
     </div>
