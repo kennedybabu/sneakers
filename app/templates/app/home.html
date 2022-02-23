@@ -16,10 +16,12 @@
                         <div class="item">
                             <div class="item-image">
                                 <img src="{{ product.image.url }}" alt="product image">
-                                <div class="item-body">
+                                <div class="item-details">
                                     <a href="{% url 'product_detail' product.id  product.slug %}"><p>{{ product.name }}</p></a>
                                     <p>price: {{ product.price }}</p>
-                                    <!-- <small>{{ product.description }}</small> -->
+                                    <div class="more">
+                                        <small>{{ product.description }}</small>
+                                    </div>
                                 </div>  
                             </div>
                                             
