@@ -481,3 +481,30 @@ nav {
 }
 
 
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.profile img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+}
+
+
+.update {
+    padding: .3em .6em;
+    background-color: var(--white);
+    border: none;
+    text-decoration: none;
+    border-radius: 15px;
+    color: var(--black);
+    margin: 1em 0;
+    outline: 2px solid var(--primary-color);
+}
+
