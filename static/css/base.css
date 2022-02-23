@@ -254,6 +254,48 @@ nav {
 }
 
 
+.item-details {
+    margin-top: 8rem;
+    transition: .4s;
+    transition-property: transform;
+    text-align: center;
+}
+
+
+.item-image:hover .item-details {
+    transform: translateY(-30px);
+}
+
+
+.item-image .item-details a {
+    text-align: center;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+
+.more {
+    padding: 30px 30px 0 30px;
+}
+
+
+.more small {
+    font-weight: bold;
+    opacity: 0;
+    transition: .6s;
+    transition-property: opacity;
+}
+
+
+.item-image:hover .more small {
+    opacity: 1;
+}
+
+
 .item-image:hover img {
     opacity: 1;
 }
@@ -261,6 +303,12 @@ nav {
 
 .item:not(first_child) {
     margin-top: 1em;
+}
+
+
+.item-details small span {
+    font-weight: bold;
+    
 }
 
 
