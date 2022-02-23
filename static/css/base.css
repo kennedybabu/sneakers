@@ -263,7 +263,7 @@ nav {
 
 
 .item-image:hover .item-details {
-    transform: translateY(-30px);
+    transform: translateY(-40px);
 }
 
 
@@ -275,6 +275,11 @@ nav {
     font-weight: bold;
     text-decoration: none;
     color: var(--primary-color);
+}
+
+
+.item-image:hover .item-details a {
+    text-decoration: underline;
 }
 
 
@@ -453,6 +458,7 @@ nav {
 .case {
     width: 50%;
     margin: 3em auto;
+    text-align: center;
 
     box-shadow: -4px 7px 9px -4px rgba(0,0,0,0.75);
 -webkit-box-shadow: -4px 7px 9px -4px rgba(0,0,0,0.75);
@@ -497,7 +503,9 @@ nav {
 }
 
 
-.update {
+.update,
+.login ,
+.register {
     padding: .3em .6em;
     background-color: var(--white);
     border: none;
@@ -506,5 +514,11 @@ nav {
     color: var(--black);
     margin: 1em 0;
     outline: 2px solid var(--primary-color);
+}
+
+
+.login ,
+.register {
+    padding: .4em 1.3em;
 }
 
