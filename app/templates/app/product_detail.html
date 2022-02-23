@@ -18,7 +18,6 @@
             <p class="product-price">Ksh {{ product.price }}</p>
 
 
-
             {% if request.user.is_authenticated %} 
             <div class="cart-tray">
                 <form action="{% url 'cart:cart_add' product.id %}" method="POST">

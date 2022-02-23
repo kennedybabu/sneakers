@@ -3,10 +3,19 @@
 
 
 {% block content %}  
-
-<h1>{{ user.username }}</h1>
-<a href="{% url 'update-user' %}">update profile</a>
-<a href="{% url 'logout' %}">hello, {{ request.user }} || logout</a>
-<img src="{{ request.user.avatar.url }}" alt="">
+<div class="container">
+    <div class="row">
+        <div class="case">
+            <div class="top"></div>
+            <div class="middle">
+                <h1>{{ user.username }}</h1>
+                <a href="{% url 'update-user' %}">update profile</a>
+                <a href="{% url 'logout' %}">hello, {{ request.user }} || logout</a>
+                <img src="{{ request.user.avatar.url }}" alt="">
+            </div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
