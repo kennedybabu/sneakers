@@ -223,7 +223,14 @@ nav {
 }
 
 
-@media (max-width: 749px) {
+@media (max-width: 710px) {
+    .home .row {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 750px) {
     .home .row {
         padding-left: 0;
     }
@@ -233,7 +240,20 @@ nav {
         box-sizing: border-box;
     }
 
+    .item {
+        width: 230px;
+    }
 }
+
+
+@media (max-width: 1030px) {
+    .home .row {
+        padding:0 auto;
+    }
+}
+
+
+/* @media (max-width: 749px) { */
 
 .landing {
     height: 80vh;
