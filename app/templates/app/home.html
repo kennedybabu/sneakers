@@ -17,7 +17,7 @@
                                     <a href="{% url 'product_detail' product.id  product.slug %}"><p>{{ product.name }}</p></a>
                                     <small><span>price: Ksh.{{ product.price }}</span></small>
                                     <div class="more">
-                                        <small>{{ product.description }}</small>
+                                        <small>{{ product.description | truncatechars:55 }}</small>
                                     </div>
                                 </div>  
                             </div>                                            

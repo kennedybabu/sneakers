@@ -133,6 +133,13 @@ nav {
     transform-origin: left;
 }
 
+
+.home .row {
+    display: flex;
+    align-items: center;
+}
+
+
 @media (min-width: 375px){
     nav {
         padding: 1em 0;
@@ -196,7 +203,7 @@ nav {
 
 
     body {
-        padding: 0 3em;
+        padding: 0 2em;
     }
 
     .logo-div h3{
@@ -523,6 +530,11 @@ nav {
     color: var(--black);
     margin: 1em 0;
     outline: 2px solid var(--primary-color);
+}
+
+
+.update {
+    margin-left: .2rem;
 }
 
 

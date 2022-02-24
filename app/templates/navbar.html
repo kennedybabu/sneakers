@@ -48,8 +48,9 @@
                                                         <img src="{{ product.image.url }}" alt="item-image">
                                                     </div>
                                                     <div class="cart-item-info">
-                                                       {{ product.name }} <br>
+                                                       <strong>{{ product.name }}</strong> 
                                                        <small>ksh {{ product.price }}x{{ item.quantity }}</small>
+                                                     
                                                     </div>
                                                     <div class="cart-item-icon-tray">
                                                         <a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'icons/icon-delete.svg' %}" alt="trash icon"></a>                           
@@ -70,7 +71,7 @@
                           </div>
                         </div>
                         <div class="modal-footer">                                                                 
-                            <small>ksh {{ cart.get_total_price }}</small>                 
+                            <small><strong>ksh {{ cart.get_total_price }}</strong></small>                 
                         </div>
                     </div>
                     </div>

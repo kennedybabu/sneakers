@@ -4,7 +4,7 @@
 
 {% block content %}  
 <div class="container">
-    <div class="ro">
+    <div class="row">
         <div class="case">
             <div class="top"></div>
             <div class="middle">
@@ -14,7 +14,7 @@
                     {% bootstrap_form form %}
                 
                     <div>
-                        <a href="">cancel</a>
+                        <a href="{% url 'user-profile' user.id %}">cancel</a>
                         <button type="submit" class="update">update</button>
                     </div>
                 </form>
