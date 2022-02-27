@@ -11,7 +11,11 @@
                 <img src="{{ request.user.avatar.url }}" alt="profile photo">
                 <h1>{{ user.username }}</h1>
                 <a class='update' href="{% url 'update-user' %}">update profile</a>
-                <p>{{ user.bio }}</p>
+                {% if request.user.bio %}
+                    <p>{{ user.bio }}</p>
+                {% else %}                
+                   <p>write your bio</p>
+                {% endif %}
                 <a href="{% url 'logout' %}">logout</a>
             </div>
             <div class="bottom"></div>
