@@ -80,6 +80,11 @@ nav {
 }
 
 
+.modal {
+    border-radius: 12px;
+}
+
+
 .logo-div h3 {
     font-weight: 700;
 }
@@ -150,6 +155,13 @@ nav {
 @media (min-width: 375px){
     nav {
         padding: 1em 0;
+    }
+}
+
+
+@media (min-width: 1150px) {
+    .case {
+        width: 80%;
     }
 }
 
@@ -252,8 +264,6 @@ nav {
     }
 }
 
-
-/* @media (max-width: 749px) { */
 
 .landing {
     height: 80vh;
