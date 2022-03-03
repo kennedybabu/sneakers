@@ -69,6 +69,25 @@ nav {
 }
 
 
+.fall-back {
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    margin-left: 1em;
+    background-color: gray;
+    border: 1.3px solid var(--primary-color);
+}
+
+
+.fall-back h3 {
+    color: var(--white);
+    font-weight: bold;
+}
+
+
 .modal-content {
     width: 370px;
 }

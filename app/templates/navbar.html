@@ -84,8 +84,8 @@
                     <a href="{% url 'user-profile' user.id %}"><img src="{{ user.avatar.url }}" alt="profile pic"></a>
                 </div>
                 {% else %}  
-                <div>
-                    upload pic
+                <div class="fall-back">
+                    <h3>P</h3>
                 </div>
                 
                 {% endif %}
