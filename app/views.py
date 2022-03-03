@@ -95,6 +95,8 @@ def updateUser(request):
         if form.is_valid():
             form.save()
             return redirect('user-profile', id= user.id)
+        else:
+            messages.error(request, 'something went wrong...')
 
     context = {
         'form':form

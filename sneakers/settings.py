@@ -102,6 +102,12 @@ cloudinary.config(
 )
 
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dblrvhi8r',
+    'API_KEY': '671871227892646',
+    'API_SECRET': '9_PWUR4e8f7IfSs6Am-fSuvYZTU'
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -138,6 +144,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/images/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 STATICFILES_DIRS = [

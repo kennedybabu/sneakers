@@ -79,9 +79,17 @@
         </div>
         <div class="nav-login">
             {% if request.user.is_authenticated %} 
+                {% if request.user.avatar %} 
                 <div>
                     <a href="{% url 'user-profile' user.id %}"><img src="{{ user.avatar.url }}" alt="profile pic"></a>
                 </div>
+                {% else %}  
+                <div>
+                    upload pic
+                </div>
+                
+                {% endif %}
+               
             {% else %}  
                 <a href="{% url 'login' %}">login</a>
             {% endif %}
