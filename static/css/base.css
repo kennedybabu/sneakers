@@ -88,6 +88,11 @@ nav {
 }
 
 
+.modal {
+    z-index: 30000;
+}
+
+
 .modal-content {
     width: 370px;
 }
@@ -285,7 +290,7 @@ nav {
 
 
 .landing {
-    height: 80vh;
+    height: 82vh;
     display: flex;
     justify-content: center;
     align-items: center;
