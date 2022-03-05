@@ -8,7 +8,16 @@
         <div class="case">
             <div class="top"></div>
             <div class="middle profile">
+
+                {% if request.user.avatar %} 
                 <img src="{{ request.user.avatar.url }}" alt="profile photo">
+                {% else %}  
+                <a href="{% url 'user-profile' user.id %}">
+                <div class="fall-back">
+                    <h3>P</h3>
+                </div>
+                </a>                
+                {% endif %}
                 <h1>{{ user.username }}</h1>
                 <a class='update' href="{% url 'update-user' %}">update profile</a>
                 {% if request.user.bio %}
