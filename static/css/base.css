@@ -55,6 +55,11 @@ nav {
 }
 
 
+.nav-icon-tray a:hover {
+    text-decoration: none;
+}
+
+
 .nav-login {
     margin-left: .5em;
 }
@@ -306,6 +311,15 @@ nav {
 .landing span {
     color: var(--primary-color);
     font-weight: bold;
+}
+
+
+.landing a {
+    padding: .2em .8em;
+    border: 2px solid var(--primary-color);
+    border-radius: 18px;
+    color: var(--white);
+    text-decoration: none;
 }
 
 
@@ -589,6 +603,10 @@ nav {
     padding: 1em;
 }
 
+
+.middle a:hover {
+    text-decoration: none;
+}
 
 .profile {
     display: flex;
