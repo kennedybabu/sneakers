@@ -168,6 +168,11 @@ nav {
 }
 
 
+.login-p {
+    color: var(--black);
+}
+
+
 .home .row {
     display: flex;
     align-items: center;
