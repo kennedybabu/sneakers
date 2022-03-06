@@ -296,8 +296,16 @@ nav {
     align-items: center;
     flex-direction: column;  
     padding: 0;
-    background-color: red;
     width: 100%;
+    background: linear-gradient(rgba(253, 253, 253, 0.856),rgba(255, 255, 255, 0)), url("https://images.unsplash.com/photo-1555061486-8df38ac5fa6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80") no-repeat center / cover;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.landing span {
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 
