@@ -193,9 +193,17 @@ nav {
 }
 
 
+
+@media (max-width: 980px){
+   .case {
+       min-width: 70%;
+   }
+}
+
+
 @media (min-width: 1150px) {
     .case {
-        width: 80%;
+        min-width: 80%;
     }
 }
 
