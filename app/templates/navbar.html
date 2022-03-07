@@ -80,14 +80,14 @@
         <!-- <a class="nav-login"> -->
             {% if request.user.is_authenticated %} 
                 {% if request.user.avatar %} 
-                <div>
+                <div class="user-img">
                     <a href="{% url 'user-profile' user.id %}"><img src="{{ user.avatar.url }}" alt="profile pic"></a>
                 </div>
                 {% else %}  
                 <a href="{% url 'user-profile' user.id %}">
-                <div class="fall-back">
-                    <h3>P</h3>
-                </div>
+                    <div class="fall-back">
+                        <h3>P</h3>
+                    </div>
                 </a>                
                 {% endif %}
                

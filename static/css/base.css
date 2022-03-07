@@ -74,6 +74,15 @@ nav {
 }
 
 
+.user-img img {
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    margin-left: 1em;
+    border: 1.3px solid var(--primary-color); 
+}
+
+
 .fall-back {
     width: 2rem;
     display: flex;
