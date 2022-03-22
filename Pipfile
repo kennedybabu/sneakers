@@ -10,6 +10,9 @@ pillow = "*"
 psycopg2 = "*"
 django-cloudinary-storage = "*"
 python-decouple = "*"
+whitenoise = "*"
+django-heroku = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
