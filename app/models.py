@@ -13,7 +13,7 @@ class User(AbstractUser):
     email = models.EmailField(null=True, unique=True)
     bio = models.TextField(null=True)
 
-    avatar = models.ImageField(null=True)
+    avatar = models.ImageField(null=True, upload_to='images/')
 
     REQUIRED_FIELDS = []
 
@@ -45,7 +45,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     updated = models.DateTimeField(auto_now=True)
-    image = models.ImageField(blank=True)
+    image = models.ImageField(blank=True, upload_to='images/')
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, db_index=True)
 
